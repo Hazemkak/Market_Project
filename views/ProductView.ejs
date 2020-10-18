@@ -1,0 +1,40 @@
+<%- include("partials/AccHeader.ejs")%>
+
+<%-include("partials/messages.ejs")%>
+<div class="row productRow" >
+    <div class=" col-lg-5 col-md-5 col-sm-12">
+        <img class="productImg" src=<%=PRODUCT[0].image%> alt="">
+    </div>
+    <div class=" col-lg-7 col-md-7 col-sm-12">
+        <h2 class="productTitle"><%=PRODUCT[0].name%></h2><br><br>
+        <h5>Company Name : <%=PRODUCT[0].company%></h5>
+        <p><h5>Description: <br><%=PRODUCT[0].description%></h5> <br>
+            
+            <h5>Facts: </h5>
+            <p>
+                <p>Serving Size 1 Scoop (<%=PRODUCT[0].facts.weight_serving%>g)<br>
+                Servings Per Container <%=PRODUCT[0].facts.num_serving%></p>
+                
+                <hr>
+                <p style="font-weight: bold;">Amount Per Serving :</p>
+                <p>Calories <%=PRODUCT[0].facts.calories%> kcal <br>
+                Total Fat <%=PRODUCT[0].facts.total_fat%>g <br>
+                Total Carbohydrate <%=PRODUCT[0].facts.total_carb%>g <br>
+                Protein <%=PRODUCT[0].facts.protein%>g</p>
+                
+            </p>
+        </p>
+            <div style="text-align: right;">
+                <h5>Price: <i class="fas fa-coins"></i> <%=PRODUCT[0].price%></h5>
+                <br>
+            <a href="/checkout/<%=PRODUCT[0]._id%>" class="btn btn-lg btn-warning" role="button">Order Now</a>
+            <a href="/cart/<%=PRODUCT[0]._id%>" class="btn btn-lg btn-dark" role="button">Add To Cart</a>
+            <a href="/likes/<%=PRODUCT[0]._id%>" class="btn btn-lg btn-danger" role="button"><i class="far fa-heart" style="color: white;"></i></a>
+
+            </div>
+    </div>
+    
+</div>
+
+
+<%- include("partials/Footer.ejs")%>

@@ -1,0 +1,35 @@
+<%- include("partials/AccHeader.ejs")%>
+
+<%-include("partials/messages.ejs")%>
+<div class="container marketing">
+
+    
+     <div class="row">
+      <%for(var i=0;i<PRODUCT.length;i++){%>
+    
+                <div class="col-lg-4 col-md-6 col-sm-12"  >
+
+                    <div class="card mb-4 productCard">
+                      
+                        <a href="/delete/cart/<%=PRODUCT[i]._id%>"><i class="fas fa-trash-alt deleteButton"></i></a>
+                      
+                            
+                                <a href="/products/<%=PRODUCT[i]._id%>" class="imgAnchor" id="VIEW">
+                                    <img name="<%=PRODUCT[i].type%>" src="<%=PRODUCT[i].image%>" class="productImage" alt="" >
+                                </a>
+                             
+                        
+                      <div class="card-body">
+                        <h2 class="browseTitle"><%=PRODUCT[i].name%></h2>
+                        <h5 style="text-align: left; padding: 10px;"><i class="fas fa-coins"></i> <%=PRODUCT[i].price%> LE</h5>
+                        
+                      </div>
+                    </div>
+                  </div>
+            
+      <%}%>
+    </div>
+    
+</div>
+
+<%- include("partials/Footer.ejs")%>

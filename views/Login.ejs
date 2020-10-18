@@ -1,0 +1,30 @@
+<%- include("partials/Header.ejs") %>
+
+<div class="card login" >
+    <h3 style="color: orange;"> <i class="fas fa-shopping-cart"></i> Welcome To Market</h3>
+    
+    <%-include("partials/messages.ejs")%>
+
+    <form action="/users/login" method="POST">
+      <h6 style="color: red;"></h6>
+    <div class="card-body">
+          <input name="email" type="email" class="form-control" placeholder="Enter E-mail" aria-label="E-mail" aria-describedby="addon-wrapping">
+            <input name="password" placeholder="Enter Password" type="password" aria-label="Password" class="form-control">
+
+    </div>
+    
+
+    <div class="card-body">
+    
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-block btn-dark">Login</button>
+      
+      </div>
+    </div>
+    </div>
+  </form>
+  </div>
+
+
+  <%- include("partials/Footer.ejs") %>
